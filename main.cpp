@@ -6,12 +6,33 @@
 
 using namespace std;
 
-int linear_search(int container, int element){
-    return 0;
+int linear_search(vector<string> data, string element){
+    int n = 0;
+    for (string value : data){
+        if (value == element)
+            return n;
+        n++;
+    }
 }
 
-int binary_search(int container, int element){
-    return 0;
+int binary_search(vector<string> data, string element){
+    int min = 0;
+    int max = data.size() - 1;
+    while (min <= max){
+        int mid = (min + max) / 2;
+        string myData = data[mid];
+        if (element < myData){
+            max = mid-1;
+        } else if (element > data[mid]) {
+            min = mid + 1;
+        } else {
+            return mid;
+        }
+
+        return -1;
+
+
+    }
 }
 
 int main()
